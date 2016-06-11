@@ -37,6 +37,21 @@ void Sorting::BubbleSort(unsigned int *array, int size) {
     printAll(array, size);
 }
 
+void Sorting::SelectionSort(unsigned int *array, int size) {
+    for (int i = 0; i < size; i++) {
+        unsigned int minIndex = i;
+        for (int j = i+1; j < size; j++) {
+            if (array[minIndex] > array[j]) {
+                minIndex = j;
+            }
+        }
+        if (minIndex != i) {
+            swap(array[i], array[minIndex]);
+        }
+    }
+    printAll(array, size);
+}
+
 
 
 
