@@ -52,6 +52,18 @@ void Sorting::SelectionSort(unsigned int *array, int size) {
     printAll(array, size);
 }
 
+void Sorting::InsertionSort(unsigned int *array, int size) {
+    unsigned int temp = 0;
+    int backIdx = 0;
+    for (int i = 1; i < size; i++) {
+        temp = array[i];
+        for (backIdx = i; backIdx > 0 && temp < array[backIdx-1]; backIdx--) {
+            array[backIdx] = array[backIdx-1];  // move forword
+        }
+        array[backIdx] = temp;
+    }
+    printAll(array, size);
+}
 
 
 

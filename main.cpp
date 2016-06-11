@@ -21,5 +21,12 @@ int main(int argc, const char * argv[]) {
     unsigned int a2[] = {5, 9, 11, 1, 21, 33, 15, 77, 102, 7};
     s.printAll(a2, 10);
     s.SelectionSort(a2, 10);
+    // ----------------------
+    printf("insertion sort:\n");
+    unsigned int a3[] = {5, 9, 11, 1};
+    s.printAll(a3, 4);
+    s.SelectionSort(a3, 4);
+    
+    
     return 0;
 }

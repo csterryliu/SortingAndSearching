@@ -17,6 +17,7 @@ public:
     ~Sorting();
     void BubbleSort(unsigned int* array, int size);
     void SelectionSort(unsigned int* array, int size);
+    void InsertionSort(unsigned int* array, int size);
     void printAll(unsigned int* array, int size);
 private:
     void swap(unsigned int& i, unsigned int& j);
