@@ -26,7 +26,12 @@ int main(int argc, const char * argv[]) {
     unsigned int a3[] = {5, 9, 11, 1};
     s.printAll(a3, 4);
     s.SelectionSort(a3, 4);
-    
+    // ----------------------
+    printf("merge sort:\n");
+    unsigned int a4[] = {5, 9, 11, 1, 21, 33, 15, 77, 102, 7};
+    s.printAll(a4, 10);
+    s.MergeSort(a4, 10);
+    s.printAll(a4, 10);
     
     return 0;
 }
