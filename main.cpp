@@ -32,6 +32,12 @@ int main(int argc, const char * argv[]) {
     s.printAll(a4, 7);
     s.MergeSort(a4, 7);
     s.printAll(a4, 7);
+    // ----------------------
+    printf("quick sort:\n");
+    unsigned int a5[] = {1,43,14,89,16,67,41,42,47,63};
+    s.printAll(a5, 10);
+    s.QuickSort(a5, 10);
+    s.printAll(a5, 10);
     
     return 0;
 }

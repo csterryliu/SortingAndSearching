@@ -19,10 +19,12 @@ public:
     void SelectionSort(unsigned int* array, int size);
     void InsertionSort(unsigned int* array, int size);
     void MergeSort(unsigned int* array, int size);
+    void QuickSort(unsigned int* array, int size);
     void printAll(unsigned int* array, int size);
 private:
     void swap(unsigned int& i, unsigned int& j);
     void merge(unsigned int* outputArr, int outputArrSize, int middleIdx);
+    int partition(unsigned int* arr, int size);
     
 };
 
