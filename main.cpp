@@ -28,10 +28,10 @@ int main(int argc, const char * argv[]) {
     s.SelectionSort(a3, 4);
     // ----------------------
     printf("merge sort:\n");
-    unsigned int a4[] = {5, 9, 11, 1, 21, 33, 15, 77, 102, 7};
-    s.printAll(a4, 10);
-    s.MergeSort(a4, 10);
-    s.printAll(a4, 10);
+    unsigned int a4[] = {8, 10, 5, 3, 6, 7, 9};
+    s.printAll(a4, 7);
+    s.MergeSort(a4, 7);
+    s.printAll(a4, 7);
     
     return 0;
 }

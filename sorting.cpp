@@ -70,8 +70,8 @@ void Sorting::MergeSort(unsigned int *array, int size) {
     if (size < 2)
         return;
     int middle = size / 2;
-    MergeSort(array, size - middle);
-    MergeSort(array + middle + 1, middle);
+    MergeSort(array, middle);
+    MergeSort(array + middle , size - middle);
     merge(array, size, middle);
 }
 void Sorting::merge(unsigned int* outputArr, int outputArrSize, int middleIdx) {
@@ -81,10 +81,10 @@ void Sorting::merge(unsigned int* outputArr, int outputArrSize, int middleIdx) {
         temp[i] = outputArr[i];
     }
     int leftIdx = 0;
-    int rightIdx = middleIdx + 1;
+    int rightIdx = middleIdx;
     int outputIdx = 0;
     
-    while (leftIdx <= middleIdx && rightIdx <= outputArrSize-1) {
+    while (leftIdx < middleIdx && rightIdx <= outputArrSize-1) {
         if (temp[leftIdx] <= temp[rightIdx]) {
             outputArr[outputIdx] = temp[leftIdx];
             leftIdx++;
@@ -97,7 +97,7 @@ void Sorting::merge(unsigned int* outputArr, int outputArrSize, int middleIdx) {
     
     // copy the rest of left side (you don't have to copy the right side since they are already there)
     int remains = middleIdx - leftIdx;
-    for (int i = 0; i <= remains; i++) {
+    for (int i = 0; i < remains; i++) {
         outputArr[outputIdx + i] = temp[leftIdx + i];
     }
     delete[] temp;
