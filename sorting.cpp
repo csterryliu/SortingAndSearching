@@ -103,25 +103,22 @@ void Sorting::merge(unsigned int* outputArr, int outputArrSize, int middleIdx) {
     delete[] temp;
 }
 
-void Sorting::QuickSort(unsigned int *array, int size) {
-    if (size < 2) return;
+void Sorting::QuickSort(unsigned int *array, int left, int right) {
     int pivot = 0;
-    pivot = partition(array, size);
-    QuickSort(array, pivot);
-    QuickSort(array + pivot + 1, size - pivot - 1);
+    if (left < right) {
+        pivot = partition(array, left, right);
+        QuickSort(array, left, pivot - 1);
+        QuickSort(array, pivot + 1, right);
+    }
 }
 
-int Sorting::partition(unsigned int *arr, int size) {
-    int left = 0;
-    int right = size - 1;
+int Sorting::partition(unsigned int *arr, int left, int right) {
     int pivot = arr[left];  // pick the first element as pivot
     while (left < right) {
-        while (arr[left] < pivot) left++;
-        while (arr[right] > pivot) right--;
-        if (left < right) {
-            swap(arr[left], arr[right]);
-        }
+        while (left < right && arr[right] >= pivot) right--;
+        swap(arr[left], arr[right]);
+        while (left < right && arr[left] <= pivot) left++;
+        swap(arr[left], arr[right]);
     }
-    //printAll(arr, size);
     return left;
 }
