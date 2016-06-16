@@ -37,7 +37,7 @@ int main(int argc, const char * argv[]) {
     printf("quick sort:\n");
     unsigned int a5[] = {1,43,14,89,16,67,43,41,42,47,63};
     s.printAll(a5, 11);
-    s.QuickSort(a5, 0, 10);
+    s.QuickSort(a5, 11);
     s.printAll(a5, 11);
     // ----------------------
     printf("Searching example\n");
